@@ -1,0 +1,7 @@
+<h2>Summary:</h2><br/>
+<% @tags_count.each do |tag, count| %>
+  <%= tag %>: <%= link_to count, scrape_path(url: params[:url], tag: tag) %><br/>
+<% end %>
+
+<h1>Page Source:</h1><br/>
+<pre><%= @page_source %></pre>
