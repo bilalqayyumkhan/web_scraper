@@ -25,6 +25,6 @@ class Scraper
   end
 
   def highlight(tag)
-    web_page.search(tag).wrap("<b>")
+    web_page.search(tag).wrap("<pre>")
   end
 end
