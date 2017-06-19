@@ -26,8 +26,6 @@ gem 'spring',        group: :development
 
 gem 'nokogiri'
 
-gem 'open_uri_redirections'
-
 group :development, :test do
   gem 'sqlite3'
   gem 'pry'

@@ -4,11 +4,4 @@
 <% end %>
 
 <h1>Page Source:</h1><br/>
-<pre><code id="source_code"><%= @page_source %></code></pre>
-
-<%= javascript_tag do %>
-  $(function(){
-    var myHilitor = new Hilitor("source_code");
-    myHilitor.apply("<%=params[:tag]%>");
-  });
-<% end %>
+<textarea rows=50 cols="200"><%= @page_source %></textarea>

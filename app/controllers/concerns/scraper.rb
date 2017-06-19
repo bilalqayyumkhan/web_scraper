@@ -1,15 +1,13 @@
 require 'rubygems'
 require 'nokogiri'
 require 'open-uri'
-require 'open_uri_redirections'
 
 class Scraper
   attr_accessor :url, :web_page
 
   def initialize(url)
-    url = "http://" + url unless url.index("http") || url.index("https")
     self.url = url
-    self.web_page = Nokogiri::HTML(open(self.url, allow_redirections: :safe).read, nil, "UTF-8")
+    self.web_page = Nokogiri::HTML(open(self.url))
   end
 
   def tags_count
@@ -27,6 +25,6 @@ class Scraper
   end
 
   def highlight(tag)
-    web_page.search(tag).wrap("<mark></mark>")
+    web_page.search(tag).wrap("<pre>")
   end
 end
