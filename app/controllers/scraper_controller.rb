@@ -3,7 +3,7 @@ class ScraperController < ApplicationController
   end
 
   def scrape
-    @web_page = Scraper.new(params[:url]) #adding comment
+    @web_page = Scraper.new(params[:url])
     @web_page.highlight(params[:tag]) if params[:tag].present?
 
     @page_source = @web_page.page_source
